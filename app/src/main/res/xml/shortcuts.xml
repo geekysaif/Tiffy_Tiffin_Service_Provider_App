@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--home short cut-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/umbrella"
+        android:shortcutDisabledMessage="@string/home"
+        android:shortcutId="message"
+        android:shortcutLongLabel="@string/home"
+        android:shortcutShortLabel="@string/home"
+        tools:targetApi="n_mr1">
+
+        <!--  i have declared main activity also to maintain back stack -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.demo.activity.MainActivity"
+            android:targetPackage="com.example.demo" />
+
+        <!-- this activity will open when this shortcut clicked -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.demo.frag.HomeFragment"
+            android:targetPackage="com.example.demo" />
+
+        <!-- If your shortcut is associated with multiple intents, include them
+             here. The last intent in the list determines what the user sees when
+             they launch this shortcut. -->
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+    <!--History shortcut-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_history"
+        android:shortcutDisabledMessage="@string/history"
+        android:shortcutId="message1"
+        android:shortcutLongLabel="@string/history"
+        android:shortcutShortLabel="@string/history"
+        tools:targetApi="n_mr1">
+
+        <!--  i have declared main activity also to maintain back stack -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.demo.activity.MainActivity"
+            android:targetPackage="com.example.demo" />
+
+        <!-- this activity will open when this shortcut clicked -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.demo.frag.HistoryFragment"
+            android:targetPackage="com.example.demo" />
+
+        <!-- If your shortcut is associated with multiple intents, include them
+             here. The last intent in the list determines what the user sees when
+             they launch this shortcut. -->
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <!-- Specify more shortcuts here. -->
+</shortcuts>

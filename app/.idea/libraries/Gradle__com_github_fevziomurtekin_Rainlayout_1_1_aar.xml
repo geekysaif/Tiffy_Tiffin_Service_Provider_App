@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.fevziomurtekin:Rainlayout:1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a061478b10ee26944105ceafb039f845/jetified-Rainlayout-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a061478b10ee26944105ceafb039f845/jetified-Rainlayout-1.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.fevziomurtekin/Rainlayout/1.1/7cbf7480aab315a35cac7b718d8edb3ea8c4a40e/Rainlayout-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

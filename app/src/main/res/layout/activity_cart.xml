@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".activity.CartActivity">
+
+    <ImageView
+        android:id="@+id/no_items"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/ic_empty_cart"/>
+
+
+    <TextView
+        android:id="@+id/btn_order_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="80dp"
+        android:background="@drawable/rectangle_green"
+        android:padding="10dp"
+        android:text="Order Now"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+</LinearLayout>

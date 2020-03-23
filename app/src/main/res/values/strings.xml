@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Tiffy</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="favourates">Favorites</string>
+    <string name="cart">Cart</string>
+    <string name="internet_connection">oops..Please check your internet connection.</string>
+    <string name="history">History</string>
+    <string name="total_items_0">Total Items: 0</string>
+    <string name="login_signup">Login/SignUp</string>
+    <string name="email">Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_mobile">Enter Mobile</string>
+    <string name="mobile">Mobile</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email_id">Enter Email-Id</string>
+    <string name="register">Register</string>
+
+    <string name="notifications">Notifications</string>
+
+    <string name="about_us">About Us</string>
+    <string name="rate_app">Rate App</string>
+    <string name="share_app">Share App</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+</resources>

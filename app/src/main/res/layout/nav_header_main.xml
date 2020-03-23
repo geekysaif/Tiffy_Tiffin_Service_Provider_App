@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fevziomurtekin.widget.RainlayoutView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rainview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    app:dropPerSecond="5"
+    app:dropSrc="@drawable/tif_1"
+    app:dropTintColor="@color/colorPrimary"
+    app:durationOfDropTime="1500"
+    app:isColorful="true"
+    android:layout_marginTop="35dp"
+    tools:context=".activity.SplashActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/nav_banner" />
+    </RelativeLayout>
+
+
+
+
+</com.fevziomurtekin.widget.RainlayoutView>
+
+
+

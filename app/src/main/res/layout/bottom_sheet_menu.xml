@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#DFDCDC"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="56dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <!--breakfast-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_green"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:text="BreakFast" />
+            <LinearLayout
+                android:id="@+id/lyr_brk_fast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <com.todkars.shimmer.ShimmerRecyclerView
+                    android:id="@+id/recyclerView_breakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:shimmer_recycler_item_count="10"
+                    app:shimmer_recycler_layout="@layout/list_item_shimmer_layout" />
+
+            </LinearLayout>
+
+            <!--lunch-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_green"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:text="BreakFast" />
+            <LinearLayout
+                android:id="@+id/lyr_lunch_fast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <com.todkars.shimmer.ShimmerRecyclerView
+                    android:id="@+id/recyclerView_lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:shimmer_recycler_item_count="10"
+                    app:shimmer_recycler_layout="@layout/list_item_shimmer_layout" />
+
+            </LinearLayout>
+
+            <!--dinner-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_green"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:text="BreakFast" />
+            <LinearLayout
+                android:id="@+id/lyr_dinner_fast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <com.todkars.shimmer.ShimmerRecyclerView
+                    android:id="@+id/recyclerView_dinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:shimmer_recycler_item_count="10"
+                    app:shimmer_recycler_layout="@layout/list_item_shimmer_layout" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
