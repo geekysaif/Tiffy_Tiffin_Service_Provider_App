@@ -61,7 +61,7 @@ class TiffinDetailsActivity : ActivityBase() {
 
     private var tiffy_service_provider_id: String = ""
 
-    val final_jsonArray = JSONArray()
+
     val jsonObject_basic_details = JSONObject()
     val jsonObject_breakfast = JSONObject()
     val jsonObject_lunch = JSONObject()
@@ -184,8 +184,8 @@ class TiffinDetailsActivity : ActivityBase() {
                 lunch_count!!.text = lunchcount.toString()
                 totalcount = brkfastcount + dinnercount + lunchcount
                 total_count!!.text = "" + "Total Items:  " + totalcount.toString()
-                jsonObject_lunch.put("lunch_count", lunchcount)
-                jsonObject_lunch.put("lunch_amount", "60")
+                jsonObject_lunch.put("lunchcount", lunchcount)
+                jsonObject_lunch.put("lunch_amount", "70")
 
                 toasty_success("" + lunchcount + "  " + "Lunch Added")
             }
@@ -195,8 +195,8 @@ class TiffinDetailsActivity : ActivityBase() {
             lunch_count!!.text = lunchcount.toString()
             totalcount = brkfastcount + dinnercount + lunchcount
             total_count!!.text = "" + "Total Items:  " + totalcount.toString()
-            jsonObject_lunch.put("lunch_count", lunchcount)
-            jsonObject_lunch.put("lunch_amount", "60")
+            jsonObject_lunch.put("lunchcount", lunchcount)
+            jsonObject_lunch.put("lunch_amount", "70")
 
             toasty_success("" + lunchcount + "  " + "Lunch Added")
         }
@@ -212,8 +212,8 @@ class TiffinDetailsActivity : ActivityBase() {
                 dinner_count!!.text = dinnercount.toString()
                 totalcount = brkfastcount + lunchcount + dinnercount
                 total_count!!.text = "" + "Total Items:  " + totalcount.toString()
-                jsonObject_dinner.put("dinner_count", dinnercount)
-                jsonObject_dinner.put("dinner_amount", "60")
+                jsonObject_dinner.put("dinnercount", dinnercount)
+                jsonObject_dinner.put("dinner_amount", "80")
 
                 toasty_success("" + dinnercount + "  " + "Dinner Added")
             }
@@ -223,8 +223,8 @@ class TiffinDetailsActivity : ActivityBase() {
             dinner_count!!.text = dinnercount.toString()
             totalcount = brkfastcount + lunchcount + dinnercount
             total_count!!.text = "" + "Total Items:  " + totalcount.toString()
-            jsonObject_dinner.put("dinner_count", dinnercount)
-            jsonObject_dinner.put("dinner_amount", "60")
+            jsonObject_dinner.put("dinnercount", dinnercount)
+            jsonObject_dinner.put("dinner_amount", "80")
 
             toasty_success("" + dinnercount + "  " + "Dinner Added")
         }
@@ -241,7 +241,6 @@ class TiffinDetailsActivity : ActivityBase() {
                 lyr_dinner.visibility = View.GONE
             }
         }
-
         /*visibility lunch menu*/
         findViewById<TextView>(R.id.txt_lunch).setOnClickListener {
 
@@ -254,7 +253,6 @@ class TiffinDetailsActivity : ActivityBase() {
 
             }
         }
-
         /*visibility lunch dinner*/
         findViewById<TextView>(R.id.txt_dinner).setOnClickListener {
 
@@ -270,25 +268,36 @@ class TiffinDetailsActivity : ActivityBase() {
 
         /*txt_add_cart*/
         findViewById<TextView>(R.id.txt_add_cart).setOnClickListener {
-            tiffy_service_provider_id = "5"
-            jsonObject_basic_details.put("tiffy_service_provider_id", tiffy_service_provider_id)
-            jsonObject_basic_details.put("tiffy_service_provider_name", "5")
-            jsonObject_basic_details.put(
-                "customer_address",
-                "D-1167, Block-D, Indira Nagar, Lucknow, Uttar Pradesh, India"
-            )
-            jsonObject_basic_details.put("customer_name", "Mohd Saif Alam")
-            jsonObject_basic_details.put("customer_contact", "8840133***")
-
-            final_jsonArray.put(jsonObject_breakfast)
-            final_jsonArray.put(jsonObject_lunch)
-            final_jsonArray.put(jsonObject_dinner)
-
-            val intent = Intent(applicationContext, CartActivity::class.java)
-            intent.putExtra("final_jsonArray",""+final_jsonArray)
-            startActivity(intent)
-
+            add_to_cart()
         }
+    }
+
+    /*add to cart*/
+    fun add_to_cart() {
+        tiffy_service_provider_id = "5"
+        jsonObject_basic_details.put("tiffy_service_provider_id", tiffy_service_provider_id)
+        jsonObject_basic_details.put("tiffy_service_provider_name", "XYZ Tiffin Services")
+        jsonObject_basic_details.put("tiffy_service_provider_contact", "8840133***")
+        jsonObject_basic_details.put("customer_address", "D-1167, Block-D, Indira Nagar, Lucknow, Uttar Pradesh, India")
+        jsonObject_basic_details.put("tiffy_user_name", "Mohd Saif Alam")
+        jsonObject_basic_details.put("tiffy_user_contact", "9793612***")
+        jsonObject_basic_details.put("totalcount", totalcount)
+
+        val final_jsonArray = JSONArray()
+        final_jsonArray.put(0,jsonObject_basic_details)
+        final_jsonArray.put(1,jsonObject_breakfast)
+        final_jsonArray.put(2,jsonObject_lunch)
+        final_jsonArray.put(3,jsonObject_dinner)
+
+        if (totalcount==0) {
+            toasty_error("Please first add items in cart")
+            return
+        }else{
+            val intent = Intent(applicationContext, CartActivity::class.java)
+            intent.putExtra("final_jsonArray", "" + final_jsonArray)
+            startActivity(intent)
+        }
+
     }
 
     /*method for get list */

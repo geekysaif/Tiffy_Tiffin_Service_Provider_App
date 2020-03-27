@@ -58,7 +58,6 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -631,8 +630,8 @@
                     android:textSize="16sp"
                     tools:ignore="RtlCompat" />
             </LinearLayout>
-                <!--breakfast-->
 
+                <!--breakfast-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -701,6 +700,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <!--recycler_breakfast-->
                 <LinearLayout
                     android:id="@+id/lyr_brkfast"
                     android:layout_width="match_parent"
@@ -790,6 +790,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <!--recycler_lunch-->
                 <LinearLayout
                     android:id="@+id/lyr_lunch"
                     android:layout_width="match_parent"
@@ -879,6 +880,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <!--recycler_dinner-->
                 <LinearLayout
                     android:id="@+id/lyr_dinner"
                     android:layout_width="match_parent"

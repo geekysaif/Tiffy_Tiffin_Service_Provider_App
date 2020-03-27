@@ -35,5 +35,10 @@
     <string name="rate_app">Rate App</string>
     <string name="share_app">Share App</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="dinner">Dinner</string>
+    <string name="lunch">Lunch</string>
+    <string name="breakfast">BreakFast</string>
+    <string name="paid_amount">Paid Amount</string>
+    <string name="applied_coupan">Applied Coupan</string>
 
 </resources>
