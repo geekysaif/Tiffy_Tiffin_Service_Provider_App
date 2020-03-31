@@ -1,4 +1,4 @@
-package com.example.demo
+package logic.mania.tiffy
 
 import org.junit.Test
 

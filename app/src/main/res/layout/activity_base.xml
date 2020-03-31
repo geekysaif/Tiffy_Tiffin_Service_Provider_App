@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".util.ActivityBase">
+    tools:context="logic.mania.tiffy.util.ActivityBase">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

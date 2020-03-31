@@ -1,4 +1,4 @@
-package com.example.demo
+package logic.mania.tiffy
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under navigation_drawer_menu.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.demo", appContext.packageName)
+        assertEquals("com.mania.tiffy", appContext.packageName)
     }
 }

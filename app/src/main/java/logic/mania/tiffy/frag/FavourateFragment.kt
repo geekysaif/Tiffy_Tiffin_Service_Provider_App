@@ -1,4 +1,4 @@
-package com.example.demo.frag
+package logic.mania.tiffy.frag
 
 import android.content.Context
 import android.graphics.Color
@@ -10,14 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 
-import com.example.demo.R
-import com.example.demo.adapter.DummyAdapter
-import com.example.demo.util.ActivityBase
+import logic.mania.tiffy.adapter.DummyAdapter
+import logic.mania.tiffy.util.ActivityBase
 import com.todkars.shimmer.ShimmerRecyclerView
 import kotlinx.android.synthetic.main.fragment_favourate.*
-import kotlinx.android.synthetic.main.fragment_history.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_home.recyclerView
+import logic.mania.tiffy.R
 import org.json.JSONArray
 import org.json.JSONObject
 

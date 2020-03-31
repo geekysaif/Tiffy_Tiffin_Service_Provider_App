@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.example.demo.util
+package logic.mania.tiffy.util
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -14,10 +14,10 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
-import com.example.demo.BuildConfig
-import com.example.demo.R
+import logic.mania.tiffy.BuildConfig
 import com.wessam.library.LayoutImage
 import com.wessam.library.NoInternetLayout
+import logic.mania.tiffy.R
 
 open class ActivityBase : AppCompatActivity() {
 

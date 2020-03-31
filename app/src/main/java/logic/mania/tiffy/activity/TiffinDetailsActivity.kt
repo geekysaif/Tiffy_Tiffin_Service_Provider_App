@@ -1,38 +1,28 @@
-package com.example.demo.activity
+package logic.mania.tiffy.activity
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.demo.R
-import com.example.demo.adapter.BreakFastAdapter
-import com.example.demo.adapter.DummyAdapter
-import com.example.demo.frag.CartFragment
-import com.example.demo.frag.HomeFragment
-import com.example.demo.util.ActivityBase
+
+import logic.mania.tiffy.adapter.BreakFastAdapter
+import logic.mania.tiffy.util.ActivityBase
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.todkars.shimmer.ShimmerRecyclerView
 import kotlinx.android.synthetic.main.activity_tiffin_details.*
-import kotlinx.android.synthetic.main.bottom_sheet_menu.*
-import kotlinx.android.synthetic.main.bottom_sheet_menu.view.*
-import kotlinx.android.synthetic.main.list_item_shimmer_layout.*
+import logic.mania.tiffy.R
 import org.json.JSONArray
 import org.json.JSONObject
-import kotlinx.android.synthetic.main.bottom_sheet_menu.bottom_sheet as bottom_sheet1
 
 class TiffinDetailsActivity : ActivityBase() {
 
@@ -76,6 +66,8 @@ class TiffinDetailsActivity : ActivityBase() {
         recyclerViewlunch = findViewById(R.id.recyclerView_lunch)
         recyclerViewdinner = findViewById(R.id.recyclerView_dinner)
         total_count = findViewById(R.id.total_count)
+
+
 
         /*show image*/
         url = intent.getStringExtra("tif_img")
@@ -278,21 +270,25 @@ class TiffinDetailsActivity : ActivityBase() {
         jsonObject_basic_details.put("tiffy_service_provider_id", tiffy_service_provider_id)
         jsonObject_basic_details.put("tiffy_service_provider_name", "XYZ Tiffin Services")
         jsonObject_basic_details.put("tiffy_service_provider_contact", "8840133***")
-        jsonObject_basic_details.put("customer_address", "D-1167, Block-D, Indira Nagar, Lucknow, Uttar Pradesh, India")
+        jsonObject_basic_details.put(
+            "customer_address",
+            "D-1167, Block-D, Indira Nagar, Lucknow, Uttar Pradesh, India"
+        )
         jsonObject_basic_details.put("tiffy_user_name", "Mohd Saif Alam")
         jsonObject_basic_details.put("tiffy_user_contact", "9793612***")
         jsonObject_basic_details.put("totalcount", totalcount)
 
-        val final_jsonArray = JSONArray()
-        final_jsonArray.put(0,jsonObject_basic_details)
-        final_jsonArray.put(1,jsonObject_breakfast)
-        final_jsonArray.put(2,jsonObject_lunch)
-        final_jsonArray.put(3,jsonObject_dinner)
 
-        if (totalcount==0) {
+        val final_jsonArray = JSONArray()
+        final_jsonArray.put(0, jsonObject_basic_details)
+        final_jsonArray.put(1, jsonObject_breakfast)
+        final_jsonArray.put(2, jsonObject_lunch)
+        final_jsonArray.put(3, jsonObject_dinner)
+
+        if (totalcount == 0) {
             toasty_error("Please first add items in cart")
             return
-        }else{
+        } else {
             val intent = Intent(applicationContext, CartActivity::class.java)
             intent.putExtra("final_jsonArray", "" + final_jsonArray)
             startActivity(intent)
@@ -305,6 +301,10 @@ class TiffinDetailsActivity : ActivityBase() {
 
         recyclerViewbreakfast!!.showShimmer()
         val jsonArray = JSONArray()
+
+        jsonObject_breakfast.put("brkfastcount", "0")
+        jsonObject_breakfast.put("brkfast_amount", "60")
+
 
         val jsonObject1 = JSONObject()
         jsonObject1.put("name", "Poori Sbji")
@@ -364,7 +364,11 @@ class TiffinDetailsActivity : ActivityBase() {
         jsonArray.put(jsonObject5)
         jsonArray.put(jsonObject6)
 
-        recyclerViewbreakfast!!.adapter = BreakFastAdapter(jsonArray, applicationContext)
+        recyclerViewbreakfast!!.adapter =
+            BreakFastAdapter(
+                jsonArray,
+                applicationContext
+            )
         recyclerViewbreakfast!!.layoutManager = LinearLayoutManager(applicationContext)
         recyclerViewbreakfast!!.hideShimmer()
         get_lunch()
@@ -375,6 +379,10 @@ class TiffinDetailsActivity : ActivityBase() {
 
         recyclerViewlunch!!.showShimmer()
         val jsonArray = JSONArray()
+
+        jsonObject_lunch.put("lunchcount", "0")
+        jsonObject_lunch.put("lunch_amount", "70")
+
 
         val jsonObject1 = JSONObject()
         jsonObject1.put("name", "Daal/Chawal/Roti/Seasonal Sabji/Papad/Salad")
@@ -434,7 +442,11 @@ class TiffinDetailsActivity : ActivityBase() {
         jsonArray.put(jsonObject5)
         jsonArray.put(jsonObject6)
 
-        recyclerViewlunch!!.adapter = BreakFastAdapter(jsonArray, applicationContext)
+        recyclerViewlunch!!.adapter =
+            BreakFastAdapter(
+                jsonArray,
+                applicationContext
+            )
         recyclerViewlunch!!.layoutManager = LinearLayoutManager(applicationContext)
 
         recyclerViewlunch!!.hideShimmer()
@@ -447,6 +459,9 @@ class TiffinDetailsActivity : ActivityBase() {
         recyclerViewdinner!!.showShimmer()
         val jsonArray = JSONArray()
 
+        jsonObject_dinner.put("dinnercount", "0")
+        jsonObject_dinner.put("dinner_amount", "80")
+
         val jsonObject1 = JSONObject()
         jsonObject1.put("name", "Daal/Chawal/Roti/Seasonal Sabji/Papad/Salad")
         jsonObject1.put("day", "Monday")
@@ -505,7 +520,11 @@ class TiffinDetailsActivity : ActivityBase() {
         jsonArray.put(jsonObject5)
         jsonArray.put(jsonObject6)
 
-        recyclerViewdinner!!.adapter = BreakFastAdapter(jsonArray, applicationContext)
+        recyclerViewdinner!!.adapter =
+            BreakFastAdapter(
+                jsonArray,
+                applicationContext
+            )
         recyclerViewdinner!!.layoutManager = LinearLayoutManager(applicationContext)
         recyclerViewdinner!!.hideShimmer()
     }

@@ -1,4 +1,4 @@
-package com.example.demo.activity
+package logic.mania.tiffy.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,13 +9,9 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-
-import com.example.demo.R
-import com.example.demo.frag.*
-import com.example.demo.util.ActivityBase
+import logic.mania.tiffy.util.ActivityBase
 
 import com.google.android.material.navigation.NavigationView
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
@@ -23,6 +19,8 @@ import com.wessam.library.LayoutImage
 import com.wessam.library.NoInternetLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import logic.mania.tiffy.R
+import logic.mania.tiffy.frag.*
 
 class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -63,7 +61,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                     if (applicationContext.isConnectedToNetwork()) {
                         R.color.colorPrimary to "Home"
                         header!!.text = getString(R.string.home)
-                        val fragment: Fragment = HomeFragment()
+                        val fragment: Fragment =
+                            HomeFragment()
                         loadFragment(fragment)
                         drawer_layout.closeDrawer(GravityCompat.START)
                     } else {
@@ -76,7 +75,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                     if (applicationContext.isConnectedToNetwork()) {
                         R.color.colorPrimaryDark to "History"
                         header!!.text = getString(R.string.history)
-                        val fragment: Fragment = HistoryFragment()
+                        val fragment: Fragment =
+                            HistoryFragment()
                         loadFragment(fragment)
                         drawer_layout.closeDrawer(GravityCompat.START)
                     } else {
@@ -89,7 +89,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                     if (applicationContext.isConnectedToNetwork()) {
                         R.color.colorAccent to "Favorites"
                         header!!.text = getString(R.string.favourates)
-                        val fragment: Fragment = FavourateFragment()
+                        val fragment: Fragment =
+                            FavourateFragment()
                         loadFragment(fragment)
                         drawer_layout.closeDrawer(GravityCompat.START)
                     } else {
@@ -102,7 +103,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                     if (applicationContext.isConnectedToNetwork()) {
                         R.color.colorPrimary to "Profile"
                         header!!.text = getString(R.string.profile)
-                        val fragment: Fragment = ProfileFragment()
+                        val fragment: Fragment =
+                            ProfileFragment()
                         loadFragment(fragment)
                         drawer_layout.closeDrawer(GravityCompat.START)
                     } else {
@@ -114,7 +116,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                     if (applicationContext.isConnectedToNetwork()) {
                         R.color.colorPrimary to "Home"
                         header!!.text = getString(R.string.home)
-                        val fragment: Fragment = HomeFragment()
+                        val fragment: Fragment =
+                            HomeFragment()
                         loadFragment(fragment)
                         drawer_layout.closeDrawer(GravityCompat.START)
                     } else {
@@ -158,7 +161,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                 if (applicationContext.isConnectedToNetwork()) {
                     R.color.colorPrimary to "Home"
                     header!!.text = getString(R.string.home)
-                    val fragment: Fragment = HomeFragment()
+                    val fragment: Fragment =
+                        HomeFragment()
                     loadFragment(fragment)
                     drawer_layout.closeDrawer(GravityCompat.START)
                 } else {
@@ -188,7 +192,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                 if (applicationContext.isConnectedToNetwork()) {
                     R.color.colorPrimaryDark to "Cart"
                     header!!.text = getString(R.string.cart)
-                    val fragment: Fragment = CartFragment()
+                    val fragment: Fragment =
+                        CartFragment()
                     loadFragment(fragment)
                     drawer_layout.closeDrawer(GravityCompat.START)
                 } else {
@@ -201,7 +206,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                 if (applicationContext.isConnectedToNetwork()) {
                     R.color.colorPrimaryDark to "History"
                     header!!.text = getString(R.string.history)
-                    val fragment: Fragment = HistoryFragment()
+                    val fragment: Fragment =
+                        HistoryFragment()
                     loadFragment(fragment)
                     drawer_layout.closeDrawer(GravityCompat.START)
                 } else {
@@ -214,7 +220,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                 if (applicationContext.isConnectedToNetwork()) {
                     R.color.colorPrimary to "Profile"
                     header!!.text = getString(R.string.profile)
-                    val fragment: Fragment = ProfileFragment()
+                    val fragment: Fragment =
+                        ProfileFragment()
                     loadFragment(fragment)
                     drawer_layout.closeDrawer(GravityCompat.START)
                 } else {
@@ -226,7 +233,8 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
                 if (applicationContext.isConnectedToNetwork()) {
                     R.color.colorAccent to "Favorites"
                     header!!.text = getString(R.string.favourates)
-                    val fragment: Fragment = FavourateFragment()
+                    val fragment: Fragment =
+                        FavourateFragment()
                     loadFragment(fragment)
                     drawer_layout.closeDrawer(GravityCompat.START)
                 } else {

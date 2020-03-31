@@ -1,4 +1,4 @@
-package com.example.demo.adapter
+package logic.mania.tiffy.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.demo.R
 import kotlinx.android.synthetic.main.items.view.name
 import kotlinx.android.synthetic.main.items.view.tif_img
 import kotlinx.android.synthetic.main.items_brkfast.view.*
+import logic.mania.tiffy.R
 import org.json.JSONArray
 
 class BreakFastAdapter(val jsonArray: JSONArray, val context: Context?) :

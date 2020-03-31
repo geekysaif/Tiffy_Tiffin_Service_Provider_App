@@ -1,4 +1,4 @@
-package com.example.demo.frag
+package logic.mania.tiffy.frag
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-
-import com.example.demo.R
-import com.example.demo.util.ActivityBase
+import logic.mania.tiffy.R
 
 /**
  * A simple [Fragment] subclass.

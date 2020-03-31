@@ -12,7 +12,7 @@
     app:durationOfDropTime="1500"
     app:isColorful="true"
     android:layout_marginTop="35dp"
-    tools:context=".activity.SplashActivity">
+    tools:context="logic.mania.tiffy.activity.SplashActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

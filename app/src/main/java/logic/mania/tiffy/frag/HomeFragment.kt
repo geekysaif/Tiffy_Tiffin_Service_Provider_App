@@ -1,7 +1,6 @@
-package com.example.demo.frag
+package logic.mania.tiffy.frag
 
 import android.content.Context
-import android.graphics.Color
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,16 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.demo.R
-import com.example.demo.adapter.DummyAdapter
-import com.example.demo.util.ActivityBase
+import logic.mania.tiffy.adapter.DummyAdapter
+import logic.mania.tiffy.util.ActivityBase
 import com.todkars.shimmer.ShimmerRecyclerView
-import com.wessam.library.LayoutImage
-import com.wessam.library.NoInternetLayout
-import kotlinx.android.synthetic.main.fragment_home.*
+import logic.mania.tiffy.R
 import org.json.JSONArray
 import org.json.JSONObject
-import java.util.*
 
 class HomeFragment : Fragment() {
     private var recyclerView: ShimmerRecyclerView? = null

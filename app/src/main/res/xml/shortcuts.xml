@@ -15,13 +15,13 @@
         <!--  i have declared main activity also to maintain back stack -->
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.example.demo.activity.MainActivity"
+            android:targetClass="logic.mania.tiffy.activity.MainActivity"
             android:targetPackage="com.example.demo" />
 
         <!-- this activity will open when this shortcut clicked -->
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.example.demo.frag.HomeFragment"
+            android:targetClass="logic.mania.tiffy.frag.HomeFragment"
             android:targetPackage="com.example.demo" />
 
         <!-- If your shortcut is associated with multiple intents, include them
@@ -44,13 +44,13 @@
         <!--  i have declared main activity also to maintain back stack -->
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.example.demo.activity.MainActivity"
+            android:targetClass="logic.mania.tiffy.activity.MainActivity"
             android:targetPackage="com.example.demo" />
 
         <!-- this activity will open when this shortcut clicked -->
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.example.demo.frag.HistoryFragment"
+            android:targetClass="logic.mania.tiffy.frag.HistoryFragment"
             android:targetPackage="com.example.demo" />
 
         <!-- If your shortcut is associated with multiple intents, include them

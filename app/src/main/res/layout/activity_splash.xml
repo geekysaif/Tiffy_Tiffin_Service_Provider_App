@@ -11,7 +11,7 @@
     app:dropTintColor="@color/colorPrimary"
     app:durationOfDropTime="1000"
     app:isColorful="true"
-    tools:context=".activity.SplashActivity">
+    tools:context="logic.mania.tiffy.activity.SplashActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

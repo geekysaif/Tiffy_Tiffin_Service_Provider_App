@@ -1,4 +1,4 @@
-package com.example.demo.util
+package logic.mania.tiffy.util
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
@@ -48,7 +48,8 @@ internal fun View.applyWindowInsets(
 }
 
 private fun View.doOnApplyWindowInset(f: (View, WindowInsets, InitialPadding) -> Unit) {
-    val initialPadding = recordInitialPaddingForView(this)
+    val initialPadding =
+        recordInitialPaddingForView(this)
     setOnApplyWindowInsetsListener { v, insets ->
         f(v, insets, initialPadding)
         insets
@@ -75,9 +76,10 @@ private class InitialPadding(
     val bottom: Int
 )
 
-private fun recordInitialPaddingForView(view: View) = InitialPadding(
-    view.paddingLeft,
-    view.paddingTop,
-    view.paddingRight,
-    view.paddingBottom
-)
+private fun recordInitialPaddingForView(view: View) =
+    InitialPadding(
+        view.paddingLeft,
+        view.paddingTop,
+        view.paddingRight,
+        view.paddingBottom
+    )
