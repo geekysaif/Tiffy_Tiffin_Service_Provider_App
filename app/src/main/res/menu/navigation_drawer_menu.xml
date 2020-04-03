@@ -17,6 +17,7 @@
         android:id="@+id/cart"
         android:icon="@drawable/ic_cart"
         android:title="@string/cart"
+        android:visible="false"
         app:cnb_iconColor="@color/colorPrimary"/>
 
     <item
@@ -47,6 +48,7 @@
         android:id="@+id/about"
         android:icon="@drawable/ic_about"
         android:title="@string/about_us"
+        android:visible="false"
         app:cnb_iconColor="@color/colorPrimary" />
 
     <item

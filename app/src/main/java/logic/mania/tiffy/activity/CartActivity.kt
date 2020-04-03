@@ -9,8 +9,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.todkars.shimmer.ShimmerRecyclerView
 import logic.mania.tiffy.R
+import logic.mania.tiffy.adapter.CoupansAdapter
 
 import logic.mania.tiffy.util.ActivityBase
 import org.json.JSONArray
@@ -58,9 +60,11 @@ class CartActivity : ActivityBase() {
     private var total_paid_amount: Int = 0
     var txt_paid_amount: TextView? = null
 
-    var recyclerView_coupans:ShimmerRecyclerView? =null
-    var lyr_cupan:LinearLayout? =null
-    var btn_coupans:LinearLayout? =null
+    var recyclerView_coupans: ShimmerRecyclerView? = null
+    var lyr_cupan: LinearLayout? = null
+    var btn_coupans: LinearLayout? = null
+    var lyr_applied_coupan: LinearLayout? = null
+    var txt_coupan: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +83,6 @@ class CartActivity : ActivityBase() {
             edt_user_mobile?.isEnabled = true
             edt_user_mobile?.requestFocus()
         }
-
 
         /*back button*/
         findViewById<ImageView>(R.id.btn_back).setOnClickListener {
@@ -115,11 +118,12 @@ class CartActivity : ActivityBase() {
                 total_count!!.text = "" + "Total Items:  " + totalcount.toString()
                 toasty_success("" + brkfastcount + "  " + "Breakfast Added")
 
-                total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-                total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-                total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+                total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+                total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+                total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-                total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+                total_paid_amount =
+                    total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
                 txt_paid_amount!!.text = total_paid_amount.toString()
 
             }
@@ -134,14 +138,14 @@ class CartActivity : ActivityBase() {
             total_count!!.text = "Total Items:  $totalcount"
 
             toasty_success("" + brkfastcount + "  " + "Breakfast Added")
-            total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-            total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-            total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+            total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+            total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+            total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-            total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+            total_paid_amount =
+                total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
             txt_paid_amount!!.text = total_paid_amount.toString()
         }
-
 
         /*lunch_counters*/
         findViewById<TextView>(R.id.lunch_decrease).setOnClickListener {
@@ -159,11 +163,12 @@ class CartActivity : ActivityBase() {
                 total_count!!.text = "" + "Total Items:  " + totalcount.toString()
                 toasty_success("" + lunchcount + "  " + "Lunch Added")
 
-                total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-                total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-                total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+                total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+                total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+                total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-                total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+                total_paid_amount =
+                    total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
                 txt_paid_amount!!.text = total_paid_amount.toString()
             }
         }
@@ -178,14 +183,14 @@ class CartActivity : ActivityBase() {
 
             toasty_success("" + lunchcount + "  " + "Lunch Added")
 
-            total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-            total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-            total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+            total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+            total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+            total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-            total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+            total_paid_amount =
+                total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
             txt_paid_amount!!.text = total_paid_amount.toString()
         }
-
 
         /*dinner_counters*/
         findViewById<TextView>(R.id.dinner_decrease).setOnClickListener {
@@ -202,11 +207,12 @@ class CartActivity : ActivityBase() {
                 totalcount = brkfastcount + dinnercount + lunchcount
                 total_count!!.text = "" + "Total Items:  " + totalcount.toString()
                 toasty_success("" + dinnercount + "  " + "Dinner Added")
-                total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-                total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-                total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+                total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+                total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+                total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-                total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+                total_paid_amount =
+                    total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
                 txt_paid_amount!!.text = total_paid_amount.toString()
             }
         }
@@ -220,12 +226,19 @@ class CartActivity : ActivityBase() {
             total_count!!.text = "Total Items:  $totalcount"
 
             toasty_success("" + dinnercount + "  " + "Dinner Added")
-            total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-            total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-            total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+            total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+            total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+            total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-            total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+            total_paid_amount =
+                total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
             txt_paid_amount!!.text = total_paid_amount.toString()
+        }
+
+        /*final ordernow button*/
+        findViewById<TextView>(R.id.txt_order_now).setOnClickListener {
+            openMainActivity()
+
         }
 
         set_basic_details(jsonObject_basic_details)
@@ -258,11 +271,15 @@ class CartActivity : ActivityBase() {
         recyclerView_coupans = findViewById(R.id.recyclerView_coupans)
         lyr_cupan = findViewById(R.id.lyr_cupan)
         btn_coupans = findViewById(R.id.btn_coupans)
+        txt_coupan = findViewById(R.id.txt_coupan)
+        lyr_applied_coupan = findViewById(R.id.lyr_applied_coupan)
     }
 
     /*open main activity*/
     private fun openMainActivity() {
         intent = Intent(applicationContext, MainActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
         finish()
     }
@@ -283,12 +300,13 @@ class CartActivity : ActivityBase() {
     /*set brkfast detais*/
     fun set_brkfast_details(jsonObject1: JSONObject) {
 
-        if (jsonObject1.length().equals(0)){
+        if (jsonObject1.length().equals(0)) {
             set_lunch_details(jsonObject_lunch_details)
-        }else{
+        } else {
             brkfastamount = jsonObject1.getInt("brkfast_amount")
             brkfastcount = jsonObject1.getInt("brkfastcount")
-            breakfast_count?.text = Editable.Factory.getInstance().newEditable(brkfastcount.toString())
+            breakfast_count?.text =
+                Editable.Factory.getInstance().newEditable(brkfastcount.toString())
 
             brkfast_final_amount = brkfastamount * brkfastcount
             brkfast_amount?.text = brkfast_final_amount.toString()
@@ -301,9 +319,9 @@ class CartActivity : ActivityBase() {
     /*set lunch detais*/
     fun set_lunch_details(jsonObject2: JSONObject) {
 
-        if (jsonObject2.length().equals(0)){
+        if (jsonObject2.length().equals(0)) {
             set_dinner_details(jsonObject_dinner_details)
-        }else{
+        } else {
             lunchamount = jsonObject2.getInt("lunch_amount")
             lunchcount = jsonObject2.getInt("lunchcount")
             lunch_count?.text = Editable.Factory.getInstance().newEditable(lunchcount.toString())
@@ -317,8 +335,8 @@ class CartActivity : ActivityBase() {
     /*set dinner detais*/
     fun set_dinner_details(jsonObject3: JSONObject) {
 
-        if (jsonObject3.length().equals(0)){
-        }else{
+        if (jsonObject3.length().equals(0)) {
+        } else {
             dinneramount = jsonObject3.getInt("dinner_amount")
             dinnercount = jsonObject3.getInt("dinnercount")
             dinner_count?.text = Editable.Factory.getInstance().newEditable(dinnercount.toString())
@@ -326,14 +344,81 @@ class CartActivity : ActivityBase() {
             dinner_final_amount = dinneramount * dinnercount
             dinner_amount?.text = dinner_final_amount.toString()
 
-            total_brkfast_paid_amount=Integer.parseInt(brkfast_amount!!.text.toString())
-            total_lunch_paid_amount=Integer.parseInt(lunch_amount!!.text.toString())
-            total_dinner_paid_amount=Integer.parseInt(dinner_amount!!.text.toString())
+            total_brkfast_paid_amount = Integer.parseInt(brkfast_amount!!.text.toString())
+            total_lunch_paid_amount = Integer.parseInt(lunch_amount!!.text.toString())
+            total_dinner_paid_amount = Integer.parseInt(dinner_amount!!.text.toString())
 
-            total_paid_amount =  total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
+            total_paid_amount =
+                total_brkfast_paid_amount + total_lunch_paid_amount + total_dinner_paid_amount
             txt_paid_amount!!.text = total_paid_amount.toString()
+
+            if (isConnectedToNetwork()) {
+                recyclerView_coupans = findViewById(R.id.recyclerView_coupans)
+                get_coupans()
+
+            } else {
+                no_internet_full_screen()
+                toasty_error(getString(R.string.internet_connection))
+            }
         }
 
+
+    }
+
+
+    /*method for get coupans */
+    fun get_coupans() {
+
+        recyclerView_coupans!!.showShimmer()
+        val jsonArray = JSONArray()
+
+        val jsonObject1 = JSONObject()
+        jsonObject1.put("name", "TIFFYNEW")
+        jsonObject1.put("price", "50")
+        jsonObject1.put("description", "Only on first order upto Rs. 100")
+
+        val jsonObject2 = JSONObject()
+        jsonObject2.put("name", "TIFFY40")
+        jsonObject2.put("price", "40")
+        jsonObject2.put("description", "Get discount upto 40%")
+
+
+        val jsonObject3 = JSONObject()
+        jsonObject3.put("name", "TIFFY55")
+        jsonObject3.put("price", "55")
+        jsonObject3.put("description", "Get discount upto 55%")
+
+
+        val jsonObject4 = JSONObject()
+        jsonObject4.put("name", "TIFFY60")
+        jsonObject4.put("price", "60")
+        jsonObject4.put("description", "Get discount upto 60%")
+
+        val jsonObject5 = JSONObject()
+        jsonObject5.put("name", "TIFFY30")
+        jsonObject5.put("price", "30")
+        jsonObject5.put("description", "Get discount upto 60%")
+
+        jsonArray.put(jsonObject1)
+        jsonArray.put(jsonObject2)
+        jsonArray.put(jsonObject3)
+        jsonArray.put(jsonObject4)
+        jsonArray.put(jsonObject5)
+
+        recyclerView_coupans!!.adapter =
+            CoupansAdapter(jsonArray, this)
+        recyclerView_coupans!!.layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView_coupans!!.hideShimmer()
+    }
+
+
+    /*implement coupan price*/
+    fun get_coupans_details(price: Int, c_name: String) {
+        txt_coupan!!.text=c_name
+        val t_paid_amount: Int = (total_paid_amount * price) / 100
+        txt_paid_amount!!.text = t_paid_amount.toDouble().toString()
+        lyr_cupan?.visibility = View.GONE
+        lyr_applied_coupan?.visibility = View.VISIBLE
 
     }
 

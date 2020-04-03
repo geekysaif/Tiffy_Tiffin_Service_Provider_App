@@ -722,12 +722,12 @@
 
                         <!--applied_coupan-->
                         <LinearLayout
-                            android:id="@+id/lyr_coupan"
+                            android:id="@+id/lyr_applied_coupan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:padding="2dp"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             android:weightSum="2">
 
                             <TextView
@@ -744,14 +744,14 @@
                                 android:textSize="16sp" />
 
                             <TextView
-
+                                android:id="@+id/txt_coupan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
                                 android:background="@drawable/rectangle_white"
                                 android:fontFamily="sans-serif"
-                                android:hint="TIFFYNEW"
+                                android:hint="COUPAN_NAME"
                                 android:padding="10dp"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorBlack"
@@ -792,6 +792,7 @@
         android:id="@+id/lyr_cupan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:layout_margin="10dp"
         android:background="@drawable/rectangle_white_bg"
         android:elevation="50dp"
@@ -806,7 +807,7 @@
             android:layout_gravity="start"
             android:layout_margin="10dp"
             android:src="@drawable/ic_cancel"
-            android:tint="@color/colorRed" />
+            android:tint="@color/colorWhite" />
 
         <com.todkars.shimmer.ShimmerRecyclerView
             android:id="@+id/recyclerView_coupans"
