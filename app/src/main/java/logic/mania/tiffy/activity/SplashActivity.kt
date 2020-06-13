@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 import logic.mania.tiffy.R
 
 class SplashActivity : AppCompatActivity() {
-    private val SPLASH_TIME_OUT:Long= 1000
+    private val SPLASH_TIME_OUT:Long= 3000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setFlags(
