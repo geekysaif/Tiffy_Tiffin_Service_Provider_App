@@ -54,7 +54,7 @@ open class ActivityBase : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
     }
-
+//
     /*common method for no_internet_full_screen*/
     fun no_internet_full_screen() {
         let {
