@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText
 
 import kotlinx.android.synthetic.main.activity_login.*
 import logic.mania.tiffy.R
-/*created by saif*/
+/*created by saif */
 class LoginActivity : ActivityBase() {
 
     var etmobile: TextInputEditText? = null
