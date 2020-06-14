@@ -19,7 +19,6 @@ class LoginActivity : ActivityBase() {
     var etmobile: TextInputEditText? = null
     var etpassword: TextInputEditText? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -41,12 +40,10 @@ class LoginActivity : ActivityBase() {
             startActivity(i)
             finish()
         }
-
         findViewById<TextView>(R.id.submit_login).setOnClickListener {
 
             validation()
         }
-
         findViewById<ImageView>(R.id.btn_back).setOnClickListener {
 
             finish()
